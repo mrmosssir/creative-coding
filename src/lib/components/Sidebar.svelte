@@ -7,16 +7,25 @@
 
 	type SidebarLink = '/' | '/conways-game-of-life';
 
-	const sidebarItems = [
-		{
-			title: 'Getting Started',
-			items: [{ text: 'Introduction', link: '/' }]
-		},
-		{
-			title: 'Demo',
-			items: [{ text: "Conway's Game of Life", link: '/conways-game-of-life' }]
+	const sidebarItems: Array<{ title: string; items: Array<{ text: string; link: SidebarLink }> }> =
+		[
+			{
+				title: 'Getting Started',
+				items: [{ text: 'Introduction', link: '/' }]
+			},
+			{
+				title: 'Demo',
+				items: [{ text: "Conway's Game of Life", link: '/conways-game-of-life' }]
+			}
+		];
+
+	const checkActiveLink = (link: SidebarLink) => {
+		const withoutBase = page.url.pathname.split('/creative-coding')[1] || page.url.pathname;
+		if (link === '/') {
+			return withoutBase === '/';
 		}
-	];
+		return withoutBase.includes(link);
+	};
 </script>
 
 <aside
@@ -38,9 +47,9 @@
 						{#each section.items as item}
 							<li>
 								<a
-									href={resolve(item.link as SidebarLink)}
+									href={resolve(item.link)}
 									class="block no-underline pt-2 text-base transition-all duration-150
-									{page.url.pathname === item.link ? 'text-link-active-text' : 'text-link-text'}"
+									{checkActiveLink(item.link) ? 'text-link-active-text' : 'text-link-text'}"
 									>{item.text}
 								</a>
 							</li>
