@@ -7,10 +7,13 @@
 	--color-sidebar-text: #dfdfd6;
 	--color-link-text: #98989f;
 	--color-link-active-text: #a8b1ff;
+	--color-main-text: #dfdfd6;
 }
 
 body {
 	margin: 0;
 	font-family:
 		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+	background-color: var(--color-main-bg);
+	color: var(--color-main-text);
 }
