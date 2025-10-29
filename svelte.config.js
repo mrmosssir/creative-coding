@@ -14,12 +14,10 @@ const config = {
 			fallback: undefined,
 			precompress: false,
 			strict: true
-		})
-	},
-
-	paths: {
-		// 只有在 GitHub Actions 執行 build 時，才設定 base path
-		base: process.env.GITHUB_ACTIONS === 'true' ? '/creative-coding' : ''
+		}),
+		paths: {
+			base: process.env.BASE_PATH || ''
+		}
 	}
 };
 

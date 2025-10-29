@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import logo from '$lib/assets/logo.png';
 	let { enable = false } = $props();
+
+	type SidebarLink = '/' | '/conways-game-of-life';
 
 	const sidebarItems = [
 		{
@@ -33,7 +36,7 @@
 						{#each section.items as item}
 							<li>
 								<a
-									href={item.link}
+									href={resolve(item.link as SidebarLink)}
 									class="block no-underline pt-2 text-base text-link-text transition-all duration-150"
 									>{item.text}</a
 								>
