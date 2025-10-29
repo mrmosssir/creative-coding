@@ -131,19 +131,19 @@
 	});
 </script>
 
-<h2 class="text-4xl">Conway's Game of Life</h2>
+<h2 class="text-4xl text-primary-text">Conway's Game of Life</h2>
 
 <div class="flex flex-col gap-4 mt-8 md:flex-row">
 	<div class="flex flex-row gap-2 w-full md:w-32 md:flex-col">
 		<button
-			class="bg-sidebar-bg min-w-16 p-2 cursor-pointer rounded-lg {interval
+			class="bg-secondary min-w-16 p-2 cursor-pointer rounded-lg {interval
 				? 'text-link-active-text'
 				: 'text-link-text'}"
 			aria-label="Start"
 			onclick={handleStart}>Start</button
 		>
 		<button
-			class="bg-sidebar-bg min-w-16 p-2 cursor-pointer rounded-lg {!interval
+			class="bg-secondary min-w-16 p-2 cursor-pointer rounded-lg {!interval
 				? 'text-link-active-text'
 				: 'text-link-text'}"
 			aria-label="Pause"

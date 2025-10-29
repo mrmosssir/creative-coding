@@ -27,7 +27,7 @@
 	<div class="flex flex-col flex-1 h-dvh">
 		<!-- Header -->
 		<header
-			class="sticky top-0 z-1 bg-nav-bg h-[72px] border-b border-black 2xl:pr-[max(32px,calc((100vw-(1536px-64px))/2))]"
+			class="sticky top-0 z-1 bg-primary h-[72px] border-b border-black 2xl:pr-[max(32px,calc((100vw-(1536px-64px))/2))]"
 		>
 			<div class="flex items-center justify-between h-[72px] px-6">
 				<button
@@ -43,7 +43,7 @@
 		</header>
 		<!-- Main Content -->
 		<main
-			class="flex-1 overflow-y-auto bg-main-bg 2xl:pr-[max(32px,calc((100vw-(1536px-64px))/2))]"
+			class="flex-1 overflow-y-auto bg-primary 2xl:pr-[max(32px,calc((100vw-(1536px-64px))/2))]"
 		>
 			<div class="py-8 px-6 md:py-12 md:px-24">
 				{@render children?.()}

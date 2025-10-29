@@ -15,7 +15,7 @@
 </script>
 
 <aside
-	class="block w-full md:w-auto md:min-w-[280px] overflow-y-auto h-[calc(100dvh-72px)] md:h-dvh absolute top-[72px] left-0 duration-300 bg-main-bg text-sidebar-text md:relative md:top-0 md:translate-x-0! md:bg-sidebar-bg 2xl:pl-[max(32px,calc((100vw-(1536px-64px))/2))] z-2
+	class="block w-full md:w-auto md:min-w-[280px] overflow-y-auto h-[calc(100dvh-72px)] md:h-dvh absolute top-[72px] left-0 duration-300 bg-primary text-primary-text md:relative md:top-0 md:translate-x-0! md:bg-secondary 2xl:pl-[max(32px,calc((100vw-(1536px-64px))/2))] z-2
 	{enable ? 'translate-x-0' : '-translate-x-full'}"
 >
 	<nav class="px-9 py-6">
