@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 	import logo from '$lib/assets/logo.png';
+
 	let { enable = false } = $props();
 
 	type SidebarLink = '/' | '/conways-game-of-life';
@@ -37,9 +39,10 @@
 							<li>
 								<a
 									href={resolve(item.link as SidebarLink)}
-									class="block no-underline pt-2 text-base text-link-text transition-all duration-150"
-									>{item.text}</a
-								>
+									class="block no-underline pt-2 text-base transition-all duration-150
+									{page.url.pathname === item.link ? 'text-link-active-text' : 'text-link-text'}"
+									>{item.text}
+								</a>
 							</li>
 						{/each}
 					</ul>

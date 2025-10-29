@@ -1,0 +1,1 @@
+import"../chunks/DsnmJJEf.js";import"../chunks/BMD7xWOl.js";import{f as r,b as a}from"../chunks/D4o8qBDz.js";var e=r('<div><h1 class="text-6xl md:text-5xl font-bold mb-6 text-primary-text">Creative Coding</h1></div>');function d(t){var o=e();a(t,o)}export{d as component};

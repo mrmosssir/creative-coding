@@ -11,6 +11,8 @@
 	// 初始活細胞位置
 	let alive: number[][] = [];
 
+	let saveData: number[][][] = [];
+
 	// 每個格子的尺寸
 	const size = 8;
 
@@ -119,10 +121,23 @@
 		interval = null;
 	};
 
+	const handleSave = () => {
+		const save = localStorage.getItem('conways-game-of-life-save') || '[]';
+		const saveData = JSON.parse(save);
+		saveData.push(alive);
+		localStorage.setItem('conways-game-of-life-save', JSON.stringify(saveData));
+	};
+
+	const handleLoad = (index: number) => {
+		alive = saveData[index];
+		updateCanvas();
+	};
+
 	onMount(() => {
 		initCanvas();
 		gridSize = canvas.width / size;
 		arr = new Array(gridSize).fill([]).map(() => new Array(gridSize).fill(false));
+		saveData = JSON.parse(localStorage.getItem('conways-game-of-life-save') || '[]');
 		updateCanvas();
 	});
 
@@ -251,6 +266,20 @@
 			aria-label="Pause"
 			onclick={handlePause}>Pause</button
 		>
+		<button
+			class="bg-secondary min-w-16 p-2 cursor-pointer rounded-lg text-link-text"
+			aria-label="Save"
+			onclick={handleSave}>Save</button
+		>
+		<div class="flex flex-col gap-4 mt-8">
+			{#each saveData as _, index}
+				<button
+					class="bg-secondary min-w-16 p-2 cursor-pointer rounded-lg text-link-text"
+					aria-label="Load"
+					onclick={() => handleLoad(index)}>Load {index + 1}</button
+				>
+			{/each}
+		</div>
 	</div>
 	<canvas id="canvas" class="w-full max-w-xl aspect-square" onclick={handleClickCanvas}></canvas>
 </div>
