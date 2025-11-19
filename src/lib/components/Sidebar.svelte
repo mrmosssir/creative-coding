@@ -5,7 +5,7 @@
 
 	let { enable = false } = $props();
 
-	type SidebarLink = '/' | '/conways-game-of-life';
+	type SidebarLink = '/' | '/conways-game-of-life' | '/mandelbrot-set';
 
 	const sidebarItems: Array<{ title: string; items: Array<{ text: string; link: SidebarLink }> }> =
 		[
@@ -15,7 +15,7 @@
 			},
 			{
 				title: 'Demo',
-				items: [{ text: "Conway's Game of Life", link: '/conways-game-of-life' }]
+				items: [{ text: "Conway's Game of Life", link: '/conways-game-of-life' }, { text: 'Mandelbrot Set', link: '/mandelbrot-set' }]
 			}
 		];
 
